@@ -14,6 +14,9 @@ struct GPTRequest: Encodable {
     let maxTokens: Int
     
     enum CodingKeys: String, CodingKey {
+        case model
+        case prompt
+        case temperature
         case maxTokens = "max_tokens"
     }
 }

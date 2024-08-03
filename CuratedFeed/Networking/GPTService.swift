@@ -18,16 +18,18 @@ class GPTService {
         static let contentTypeHeaderField: String = "Content-Type"
         static let contentValue: String = "application/json"
         static let postMethodType: String = "POST"
-        static let gptModel: String = "text-davinci-003"
+        static let gptModel: String = "gpt-3.5-turbo"
         static let temperature: Double = 0.7
+        static let urlString: String = "https://api.openai.com/v1/completions"
+        static let apiKey: String = "API_KEY"
     }
     
     private var apiKey: String? {
-        ProcessInfo.processInfo.environment["API_KEY"]
+        ProcessInfo.processInfo.environment[Constants.apiKey]
     }
     
     private var urlString: String {
-        "https://api.openai.com/v1/completions"
+        Constants.urlString
     }
 }
 
@@ -50,6 +52,7 @@ extension GPTService: GPTServiceProtocol {
         do {
             let (data, _) = try await URLSession.shared.data(for: request)
             let response = try JSONDecoder().decode(GPTResponse.self, from: data)
+            print("Response \(response.choice)")
             return response
         }
         catch {
