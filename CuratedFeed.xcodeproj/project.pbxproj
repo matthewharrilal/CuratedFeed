@@ -21,6 +21,7 @@
 		766EE1782C5E913200B54DB9 /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE1772C5E913200B54DB9 /* GPTService.swift */; };
 		766EE17C2C5EA2EC00B54DB9 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE17B2C5EA2EC00B54DB9 /* ArticleCardView.swift */; };
 		766EE17F2C5EA45900B54DB9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */; };
+		766EE1822C5EA63D00B54DB9 /* ArticleCardLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE1812C5EA63D00B54DB9 /* ArticleCardLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		766EE1772C5E913200B54DB9 /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
 		766EE17B2C5EA2EC00B54DB9 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
 		766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		766EE1812C5EA63D00B54DB9 /* ArticleCardLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		766EE1402C5E8DDE00B54DB9 /* CuratedFeed */ = {
 			isa = PBXGroup;
 			children = (
+				766EE1802C5EA63100B54DB9 /* Layouts */,
 				766EE17D2C5EA44C00B54DB9 /* Helpers */,
 				766EE17A2C5EA2DF00B54DB9 /* Views */,
 				766EE1792C5E975500B54DB9 /* View Controllers */,
@@ -180,6 +183,14 @@
 				766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		766EE1802C5EA63100B54DB9 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				766EE1812C5EA63D00B54DB9 /* ArticleCardLayout.swift */,
+			);
+			path = Layouts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,6 +328,7 @@
 				766EE1422C5E8DDE00B54DB9 /* AppDelegate.swift in Sources */,
 				766EE1762C5E8EA000B54DB9 /* GPTResponse.swift in Sources */,
 				766EE1442C5E8DDE00B54DB9 /* SceneDelegate.swift in Sources */,
+				766EE1822C5EA63D00B54DB9 /* ArticleCardLayout.swift in Sources */,
 				766EE1742C5E8E9500B54DB9 /* GPTRequest.swift in Sources */,
 				766EE17C2C5EA2EC00B54DB9 /* ArticleCardView.swift in Sources */,
 				766EE1782C5E913200B54DB9 /* GPTService.swift in Sources */,
