@@ -11,6 +11,8 @@ import UIKit
 class ArticleCardLayout: UICollectionViewLayout {
     
     private var cache: [UICollectionViewLayoutAttributes] = []
+    
+    public var focusedIndexPath: IndexPath?
 
     private var contentWidth: CGFloat {
         collectionView?.bounds.width ?? 0
@@ -43,7 +45,7 @@ class ArticleCardLayout: UICollectionViewLayout {
             let angle: CGFloat = CGFloat(item) * CGFloat(0.02) // Adjust this angle for more or less tilt
             attributes.transform = CGAffineTransform(rotationAngle: angle)
             
-            attributes.zIndex = item == 0 ? 1 : 0
+            attributes.zIndex = indexPath == focusedIndexPath ? 1 : 0
             cache.append(attributes)
         }
     }
