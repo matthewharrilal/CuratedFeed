@@ -10,6 +10,7 @@ import UIKit
 
 class ArticleCardCollectionViewCell: UICollectionViewCell {
     private var panGestureRecognizer: UIPanGestureRecognizer!
+    private var originCenter: CGPoint = .zero
     
     static var identifier: String {
         String(describing: ArticleCardCollectionViewCell.self)
@@ -17,7 +18,7 @@ class ArticleCardCollectionViewCell: UICollectionViewCell {
     
     private var colors: [UIColor] = [UIColor(hex: "998650"), UIColor(hex: "A2C5AC"), UIColor(hex: "0C7C59"), UIColor(hex: "EC7357"), UIColor(hex: "CBC5EA"),  UIColor(hex: "B26E63"), UIColor(hex: "8FBFE0 "), UIColor(hex: "ED7B84"), UIColor(hex: "7EB77F")]
     
-    private lazy var containerView: UIView = {
+    public lazy var containerView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.cornerRadius = 18
@@ -60,19 +61,18 @@ extension ArticleCardCollectionViewCell {
         guard let collectionView = superview as? UICollectionView else { return }
         
         let translation = gesture.translation(in: self)
+        
+        if gesture.state == .began {
+            originCenter = center
+        }
+
         center = CGPoint(x: center.x + translation.x, y: center.y + translation.y)
         gesture.setTranslation(.zero, in: self)
-        
-        if gesture.state == .began || gesture.state == .changed {
-            if let indexPath = collectionView.indexPath(for: self) {
-                (collectionView.collectionViewLayout as? ArticleCardLayout)?.focusedIndexPath = indexPath
-            }
-        }
         
         if gesture.state == .ended {
             if abs(center.x - (collectionView.bounds.width / 2)) < 100 {
                 UIView.animate(withDuration: 0.25) {
-                    self.center = self.superview?.center ?? self.center
+                    self.center = self.originCenter
                 }
             } else {
                 if let indexPath = collectionView.indexPath(for: self) {
@@ -83,8 +83,6 @@ extension ArticleCardCollectionViewCell {
                 }
             }
             
-            // Reset focusedIndexPath after the gesture ends
-            (collectionView.collectionViewLayout as? ArticleCardLayout)?.focusedIndexPath = nil
             collectionView.collectionViewLayout.invalidateLayout()
         }
     }
