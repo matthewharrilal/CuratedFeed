@@ -19,6 +19,8 @@
 		766EE1742C5E8E9500B54DB9 /* GPTRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE1732C5E8E9500B54DB9 /* GPTRequest.swift */; };
 		766EE1762C5E8EA000B54DB9 /* GPTResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE1752C5E8EA000B54DB9 /* GPTResponse.swift */; };
 		766EE1782C5E913200B54DB9 /* GPTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE1772C5E913200B54DB9 /* GPTService.swift */; };
+		766EE17C2C5EA2EC00B54DB9 /* ArticleCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE17B2C5EA2EC00B54DB9 /* ArticleCardView.swift */; };
+		766EE17F2C5EA45900B54DB9 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		766EE1732C5E8E9500B54DB9 /* GPTRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTRequest.swift; sourceTree = "<group>"; };
 		766EE1752C5E8EA000B54DB9 /* GPTResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTResponse.swift; sourceTree = "<group>"; };
 		766EE1772C5E913200B54DB9 /* GPTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GPTService.swift; sourceTree = "<group>"; };
+		766EE17B2C5EA2EC00B54DB9 /* ArticleCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCardView.swift; sourceTree = "<group>"; };
+		766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,8 @@
 		766EE1402C5E8DDE00B54DB9 /* CuratedFeed */ = {
 			isa = PBXGroup;
 			children = (
+				766EE17D2C5EA44C00B54DB9 /* Helpers */,
+				766EE17A2C5EA2DF00B54DB9 /* Views */,
 				766EE1792C5E975500B54DB9 /* View Controllers */,
 				766EE1722C5E8E7B00B54DB9 /* Models */,
 				766EE1712C5E8DE700B54DB9 /* Networking */,
@@ -158,6 +164,22 @@
 				766EE1452C5E8DDE00B54DB9 /* HomeViewController.swift */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		766EE17A2C5EA2DF00B54DB9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				766EE17B2C5EA2EC00B54DB9 /* ArticleCardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		766EE17D2C5EA44C00B54DB9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				766EE17E2C5EA45900B54DB9 /* UIColor+Extension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +318,9 @@
 				766EE1762C5E8EA000B54DB9 /* GPTResponse.swift in Sources */,
 				766EE1442C5E8DDE00B54DB9 /* SceneDelegate.swift in Sources */,
 				766EE1742C5E8E9500B54DB9 /* GPTRequest.swift in Sources */,
+				766EE17C2C5EA2EC00B54DB9 /* ArticleCardView.swift in Sources */,
 				766EE1782C5E913200B54DB9 /* GPTService.swift in Sources */,
+				766EE17F2C5EA45900B54DB9 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
