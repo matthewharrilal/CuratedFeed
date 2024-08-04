@@ -75,11 +75,16 @@ extension ArticleCardCollectionViewCell {
                     self.center = self.originCenter
                 }
             } else {
+                guard let dataSource = collectionView.dataSource as? HomeViewController else { return }
+                
                 if let indexPath = collectionView.indexPath(for: self) {
-                    (collectionView.dataSource as? HomeViewController)?.dummyData.remove(at: indexPath.item)
+                    dataSource.dummyData.remove(at: indexPath.item)
                     collectionView.performBatchUpdates({
                         collectionView.deleteItems(at: [indexPath])
-                    }, completion: nil)
+                    }) { completed in
+                        dataSource.dummyData.append(dataSource.dummyData[indexPath.item])
+                        collectionView.insertItems(at: [IndexPath(item: dataSource.dummyData.count - 1, section: 0)])
+                    }
                 }
             }
             
